@@ -1,0 +1,4 @@
+data/*.xlsx
+data/*.csv
+dev/
+venv/
