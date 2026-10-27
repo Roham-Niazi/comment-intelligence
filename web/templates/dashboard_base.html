@@ -1,0 +1,106 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	{%block title%}
+	{%endblock%}
+
+	<link rel="shortcut icon" type="image/x-icon" href="/static/vendor/genz/imgs/template/favicon.svg">
+	<link rel="stylesheet" href="{%static 'css/dashboard.css'%}">
+	<link rel="stylesheet" href="{%static 'vendor/fontawesome-free-6.2.0-web/css/all.css'%}">
+	<link rel="stylesheet" href="{%static 'vendor/bootstrap-icons-1.10.3/bootstrap-icons.css'%}">
+	<link rel="stylesheet" href="{%static 'vendor/perfect_scrollbar/perfect_scrollbar.css'%}">
+	<link rel="stylesheet" href="{%static 'vendor/bootstrap/bootstrap.rtl.min.css'%}">
+
+	<link rel="stylesheet" href="{%static 'css/landing.css'%}">
+
+
+
+	<script src="{%static 'vendor/jquery/jquery.min.js'%}"></script>
+	<script src="{%static 'vendor/notiflix/notiflix-aio-3.2.6.min.js'%}"></script>
+
+
+	<style>
+		@font-face {
+			font-family: "Samim-FD";
+			src: url("{%static 'fonts/Samim-FD.eot'%}") format("embedded-opentype"), /* IE6–8 */ url("{%static 'fonts/Samim-FD.woff'%}") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("{%static 'fonts/Samim-FD.ttf'%}") format("truetype"); /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+		}
+
+		@font-face {
+			font-family: 'IRANSansXFaNum-Regular';
+			src: url("{%static 'fonts/IRANSansXFaNum-Regular.otf'%}") format('opentype'),url("{%static 'fonts/IRANSansXFaNum-Regular.woff'%}") format('woff'),url("{%static 'fonts/IRANSansXFaNum-Regular.ttf'%}") format('truetype');
+		}
+
+		.ISans-R {
+			font-family: IRANSansXFaNum-Regular, Arial, Helvetica, sans-serif;
+		}
+
+		.Samim-FD {
+			font-family: Samim-FD, Arial, Helvetica, sans-serif;
+		}
+	</style>
+	<link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+</head>
+<body class="ISans-R" dir="rtl">
+	<div id="app">
+		<div id="sidebar" class="active">
+			<div class="sidebar-wrapper active bg-light">
+				<div class="sidebar-header">
+					<div class="d-flex justify-content-between">
+						<div class="toggler">
+							<a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar-menu">
+					<ul class="menu-dashboard">
+						<li class="sidebar-title">فهرست</li>
+						<li class="sidebar-item">
+							<a href="{%url 'accounts:dashboard'%}" class='sidebar-link'>
+								<i class="bi bi-grid-fill"></i>
+								<span>پیشخوان</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a href="{%url 'core:home'%}" class='sidebar-link'>
+								<i class="bi bi-house-door-fill"></i>
+								<span>صفحه اصلی</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a href="{%url 'accounts:documentation'%}" class='sidebar-link'>
+								<i class="bi bi-file-earmark-fill"></i>
+								<span>مستندات</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a href="{%url 'accounts:change_password'%}" class='sidebar-link'>
+								<i class="bi bi-key-fill"></i>
+								<span>تغییر رمز عبور</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+			</div>
+		</div>
+		<div id="main">
+			<header class="mb-3">
+				<a href="#" class="burger-btn d-block d-xl-none">
+					<i class="bi bi-justify fs-3"></i>
+				</a>
+			</header>
+
+			{%block content%}
+			{%endblock%}
+		</div>
+	</div>
+
+	<script src="{%static 'vendor/perfect_scrollbar/perfect_scrollbar.min.js'%}"></script>
+	<script src="{%static 'vendor/bootstrap/bootstrap.bundle.min.js'%}"></script>
+	<script src="{%static 'js/dashboard.js'%}"></script>
+</body>
+</html>

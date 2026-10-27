@@ -1,0 +1,61 @@
+{%extends "base.html"%}
+
+{%block title%}
+<title>واژه&zwnj;کاو | ثبت نام</title>
+{%endblock%}
+
+
+{%block content%}
+	<style>
+		#phone_input:-moz-placeholder {
+			text-align: right;
+		}
+		#phone_input:-ms-input-placeholder {
+			text-align: right;
+		}
+		#phone_input::-webkit-input-placeholder {
+			text-align: right;
+		}
+	</style>
+
+	<main class="main">
+	    <div class="cover-home3">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-xl-10 col-lg-12 m-auto">
+	                    <div class="text-center mt-50 pb-50">
+	                        <h2 class="color-linear d-inline-block">خوش آمدید !</h2>
+	                    </div>
+	                    <div class="box-form-login pb-50">
+	                        <div class="form-login bg-gray-850 border-gray-800" id="main_card">
+								{%csrf_token%}
+                                <div class="form-group">
+                                    <input class="form-control bg-gray-850 border-gray-800" type="text" dir="ltr" placeholder="تلفن همراه" id="phone_input" maxlength="11" onkeypress="return /[0-9]/i.test(event.key)">
+                                </div>
+                                <div class="form-group position-relative">
+                                    <input class="form-control bg-gray-850 border-gray-800 password" type="password" placeholder="رمز عبور" id="password_1_input"><span class="viewpass1 viewpass-style" style="height: 36px;"></span>
+                                </div>
+                                <div class="form-group position-relative">
+                                    <input class="form-control bg-gray-850 border-gray-800 password" type="password" placeholder="تکرار رمز عبور" id="password_2_input"><span class="viewpass2 viewpass-style" style="height: 36px;"></span>
+                                </div>
+                                <div class="form-group" style="margin-top: 2.5rem;">
+                                    <button class="btn btn-linear color-gray-850 hover-up" type="button" onclick="send_data()">ثبت نام</button>
+                                </div>
+
+                                <div class="mb-0" align="right"><span>حساب کاربری دارید؟</span> <a class="color-linear" href="{%url 'accounts:login'%}">وارد</a> شوید</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</main>
+
+
+	
+	<script>
+		const dashboardUrl = "{% url 'accounts:dashboard' %}";
+	</script>
+	<script src="/static/vendor/notiflix/notiflix-aio-3.2.6.min.js"></script>
+	<script src="/static/js/signup.js"></script>
+{%endblock%}

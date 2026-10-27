@@ -1,0 +1,91 @@
+{%extends "dashboard_base.html"%}
+
+{%block title%}
+<title>داشبورد | مستندات</title>
+{%endblock%}
+
+
+{%block content%}
+	<style>
+		th, tr{text-align: center;}
+	</style>
+	<div class="container-fluid">
+		<div class="card card-body bg-light shadow p-3 mx-auto" style="border-radius: 15px; width: 30rem;">
+			<h5 class="card-h5-title">api key</h5>
+
+			<div class="input-group mb-3 mt-4">
+				<input type="text" class="form-control" readonly value="{{api_key}}" style="background: #ebebeb; font-family: Arial;" dir="ltr">
+				<button class="btn btn-outline-primary" title="کپی کردن" onclick="copy_key()"><i class="bi bi-clipboard"></i></button>
+			</div>
+		</div>
+
+
+
+		<div class="card card-body bg-light shadow p-3 mx-auto mt-5" style="border-radius: 15px; width: 40rem;">
+			<h5 class="card-h5-title">نحوه استفاده</h5>
+
+			<div class="input-group mb-3 mt-4">
+				<span class="input-group-text bg-success" style="color: #fff;">POST</span>
+				<input type="text" class="form-control" readonly value="{{request.get_host}}/analyze_comment/" style="background: #ebebeb; font-family: Arial;" dir="ltr">
+				<span class="input-group-text">URL</span>
+			</div>
+
+			<div class="accordion accordion-flush mt-2" id="params_acc">
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="true" data-bs-target="#params_acc1">پارامترها</button>
+					</h2>
+					<div id="params_acc1" class="accordion-collapse collapse show" data-bs-parent="#params_acc">
+						<div class="accordion-body">
+							<table class="table table-striped table-hover table-bordered" dir="ltr">
+								<thead>
+									<tr>
+										<th scope="col">پارامتر</th>
+										<th scope="col">نوع</th>
+										<th scope="col">وضعیت</th>
+										<th scope="col">توضیحات</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><b>api_key</b></td>
+										<td>String</td>
+										<td>الزامی</td>
+										<td dir="rtl">api key مخصوص شما</td>
+									</tr>
+									<tr>
+										<td><b>text</b></td>
+										<td>String</td>
+										<td>الزامی</td>
+										<td dir="rtl">متن پیام/دیدگاه</td>
+									</tr>
+									<tr>
+										<td><b>tag</b></td>
+										<td>String</td>
+										<td>اختیاری</td>
+										<td dir="rtl">برچسب این پیام/دیدگاه</td>
+									</tr>
+									<tr>
+										<td><b>date</b></td>
+										<td>String</td>
+										<td>اختیاری</td>
+										<td dir="rtl">تاریخ میلادی ایجاد کامنت با<br>فرمت YYYY-MM-DD HH:MM</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script>
+		function copy_key(){
+			navigator.clipboard.writeText("{{api_key}}")
+			Notiflix.Notify.success("api key کپی شد", {rtl:true, position:"right-bottom", fontFamily:'IRANSansXFaNum-Regular, Arial, Helvetica, sans-serif'})
+		}
+	</script>
+{%endblock%}

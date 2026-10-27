@@ -1,0 +1,35 @@
+﻿/**
+*
+*	Name:			IRANSansX Fonts
+*	Version:			2.0
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		June 22, 2021
+*	Updated on:		June 22, 2021
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونتایران سنس Xا یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANSansX fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com 
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+------------------------------------------------------------------------------------- fonts/-
+*	
+**/
+
+
+
+
+@font-face {
+    font-family: 'IRANSansXFaNum-Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('IRANSansXFaNum-Bold.otf') format('opentype'),url('IRANSansXFaNum-Bold.woff') format('woff'), url('IRANSansXFaNum-Bold.woff2') format('woff2'),url('IRANSansXFaNum-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IRANSansXFaNum-Regular';
+    font-style: normal;
+    font-weight: 100;
+    src: url('IRANSansXFaNum-Regular.otf') format('opentype'),url('IRANSansXFaNum-Regular.woff') format('woff'), url('IRANSansXFaNum-Regular.woff2') format('woff2'),url('IRANSansXFaNum-Regular.ttf') format('truetype');
+}

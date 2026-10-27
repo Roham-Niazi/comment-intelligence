@@ -1,0 +1,152 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="msapplication-TileColor" content="#0E0E0E">
+		<meta name="template-color" content="#0E0E0E">
+		<meta name="description" content="Index page">
+		<meta name="keywords" content="index, page">
+		<meta name="author" content="">
+
+
+		<link rel="stylesheet" href="/static/vendor/fontawesome-free-6.2.0-web/css/all.css">
+		<link href="/static/vendor/genz/css/vendors/bootstrap.min.css" rel="stylesheet">
+
+		<link href="/static/vendor/dashboard/css/core-dark.css" rel="stylesheet">
+		<link href="/static/vendor/dashboard/css/theme-default-dark.css" rel="stylesheet">
+
+		<link rel="shortcut icon" type="image/x-icon" href="/static/vendor/genz/imgs/template/favicon.svg">
+		<link href="/static/vendor/genz/css/style.css?v=2.0" rel="stylesheet">
+		<link href="/static/vendor/genz/css/style-rtl.css?v=2.0" rel="stylesheet">
+
+		<link href="/static/css/landing.css" rel="stylesheet">
+		{%block title%}
+		{%endblock%}
+	</head>
+
+	<body>
+		<div id="preloader-active">
+		    <div class="preloader d-flex align-items-center justify-content-center">
+		        <div class="preloader-inner position-relative">
+		            <div class="text-center"><img class="mb-10" src="/static/vendor/genz/imgs/template/favicon.svg" alt="GenZ">
+		                <div class="preloader-dots"></div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<header class="header sticky-bar bg-gray-900">
+		    <div class="container">
+		        <div class="main-header">
+		            <div class="header-logo"><a class="d-flex" href="{%url 'core:home'%}"><img class="logo-night" alt="GenZ" src="/static/img/logo.png"><img class="d-none logo-day" alt="GenZ" src="/static/vendor/genz/imgs/template/logo-day.svg"></a></div>
+		            <div class="header-nav">
+		                <nav class="nav-main-menu d-none d-xl-block">
+		                    <ul class="main-menu">
+		                        <li><a class="color-gray-500" href="{%url 'core:home'%}">صفحه اصلی</a></li>
+		                        <li><a class="color-gray-500" href="{%url 'core:home'%}#customers">مخاطبین</a></li>
+		                        <li><a class="color-gray-500" href="{%url 'core:home'%}#about_us">درباره ما</a></li>
+		                        <li><a class="color-gray-500" href="{%url 'core:home'%}#page_footer">ارتباط با ما</a></li>
+		                    </ul>
+		                </nav>
+		                <div class="burger-icon burger-icon-white"><span class="burger-icon-top"></span><span class="burger-icon-mid"></span><span class="burger-icon-bottom"></span></div>
+		            </div>
+		            <div class="header-right text-end">
+		                {%if user.is_authenticated%}
+		                	<a class="btn btn-linear d-none d-sm-inline-block hover-up hover-shadow" href="{%url 'accounts:dashboard'%}" style="margin-left: 5px;">داشبورد</a>
+		                	<a class="btn btn-linear d-none d-sm-inline-block hover-up hover-shadow" href="{%url 'accounts:logout'%}">خروج</a>
+		                {%else%}
+		                	<a class="btn btn-linear d-none d-sm-inline-block hover-up hover-shadow" href="{%url 'accounts:signup'%}" style="margin-left: 5px;">ثبت نام</a>
+		                	<a class="btn btn-linear d-none d-sm-inline-block hover-up hover-shadow" href="{%url 'accounts:login'%}">ورود</a>
+		                {%endif%}
+		            </div>
+		        </div>
+		    </div>
+		</header>
+		<div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar bg-gray-900">
+		    <div class="mobile-header-wrapper-inner">
+		        <div class="mobile-header-content-area">
+		            <div class="mobile-logo border-gray-800"><a class="d-flex" href="index.html"><img class="logo-night" alt="GenZ" src="/static/img/logo.png"><img class="d-none logo-day" alt="GenZ" src="/static/vendor/genz/imgs/template/logo-day.svg"></a></div>
+		            <div class="perfect-scroll">
+		                <div class="mobile-menu-wrap mobile-header-border">
+		                    <nav class="mt-15">
+		                        <ul class="mobile-menu font-heading">
+		                        <li><a class="color-gray-500" href="{%url 'core:home'%}">صفحه اصلی</a></li>
+		                    	<li class="has-children"><a class="color-gray-500" href="#">محصولات</a>
+		                            <ul class="sub-menu">
+		                                <li><a class="color-gray-500" href="">.</a></li>
+		                            </ul>
+		                        </li>
+		                        <li><a class="color-gray-500" href="#">درباره ما</a></li>
+		                        <li><a class="color-gray-500" href="#">ارتباط با ما</a></li>
+		                        </ul>
+		                    </nav>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		{%block content%}
+		{%endblock%}
+
+		<footer class="footer" id="page_footer">
+		    <div class="container">
+		        <div class="footer-1 bg-gray-850 border-gray-800">
+		            <div class="row">
+		                <div class="col-12 col-lg-6 mb-30">
+		                	<a class="wow animate__animated animate__fadeInUp" href="{%url 'core:home'%}">
+		                		<img class="logo-night" src="/static/img/logo.png" width="116" alt="Genz">
+		                		<img class="d-none logo-day" alt="GenZ" src="/static/img/logo.png">
+		                	</a>
+
+		                    <h6 class="color-white mb-5 wow animate__animated animate__fadeInUp">آدرس</h6>
+		                    <p class="text-sm color-gray-500 wow animate__animated animate__fadeInUp">استان گلستان، گرگان، میدان مفتح، پارک علم و فناوری (کارخانه نوآوری گرگان)</p>
+		                
+		                    <h6 class="color-white mb-5 wow animate__animated animate__fadeInUp bs-mt-3">پست الکترونیک</h6>
+		                    <p class="text-sm color-gray-500 wow animate__animated animate__fadeInUp"><a href="mailto:roham.n24@gmail.com" style="color: #94A9C9!important;">Roham.n24@gmail.com</a></p>
+
+		                    <h6 class="color-white mb-5 wow animate__animated animate__fadeInUp bs-mt-3">شماره تماس</h6>
+		                    <p class="text-sm color-gray-500 wow animate__animated animate__fadeInUp"><a href="tel:09305446422" style="color: #94A9C9!important;">09305446422</a></p>
+		                </div>
+		                <div class="col-12 col-lg-6 mb-30">
+		                	<iframe class="rounded-15" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d396.146967884677!2d54.40847090977108!3d36.843691640721836!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sde!4v1752487340431!5m2!1sen!2sde" height="320" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		                </div>
+		            </div>
+		            <div class="footer-bottom border-gray-800">
+		                <div class="row">
+		                    <div class="col-lg-5 text-center text-lg-start">
+		                        <p class="text-base color-white wow animate__animated animate__fadeIn">© خلق شده توسط <a class="copyright" href="https://www.linkedin.com/in/rohamniazi" target="_blank">رهام نیازی</a></p>
+		                    </div>
+		                    <div class="col-lg-7 text-center text-lg-end">
+		                        <div class="box-socials">
+		                            <div class="d-inline-block mr-30 wow animate__animated animate__fadeIn" data-wow-delay=".0s"><a class="icon-socials icon-github color-gray-500" href="https://github.com/Roham-Niazi" target="_blank">گیت&zwnj;هاب</a></div>
+		                            <div class="d-inline-block mr-30 wow animate__animated animate__fadeIn" data-wow-delay=".2s"><a class="icon-socials icon-linked color-gray-500" href="https://www.linkedin.com/in/rohamniazi" target="_blank">لینکدین</a></div>
+		                            <div class="d-inline-block wow animate__animated animate__fadeIn" data-wow-delay=".4s"><a class="icon-socials icon-insta color-gray-500" href="https://www.instagram.com/rohamniazi.ai" target="_blank">اینستاگرام</a></div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</footer>
+
+		<div class="progressCounter progressScroll hover-up hover-neon-2" >
+			<div class="progressScroll-border">
+				<div class="progressScroll-circle" ><span class="progressScroll-text"><i class="fi-rr-arrow-small-up"></i></span></div>
+			</div>
+		</div>
+
+		<script src="/static/vendor/genz/js/vendors/modernizr-3.6.0.min.js"></script>
+		<script src="/static/vendor/genz/js/vendors/jquery-3.6.0.min.js"></script>
+		<script src="/static/vendor/genz/js/vendors/jquery-migrate-3.3.0.min.js"></script>
+		<script src="/static/vendor/genz/js/vendors/bootstrap.bundle.min.js"></script>
+		<script src="/static/vendor/genz/js/vendors/waypoints.js"></script>
+		<script src="/static/vendor/genz/js/vendors/wow.js"></script>
+		<script src="/static/vendor/genz/js/vendors/text-type.js"></script>
+		<script src="/static/vendor/genz/js/vendors/swiper-bundle.min.js"></script>
+		<script src="/static/vendor/genz/js/vendors/jquery.progressScroll.min.js"></script>
+		<script src="/static/vendor/genz/js/main.js?v=2.0"></script>
+	</body>
+</html>
